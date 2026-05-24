@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+fimport { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Phone, MapPin, MessageCircle, Leaf, ShieldPlus, Droplets, ScanLine, Star, Award, CheckCircle, Users, Heart, ShieldCheck, Truck, ThumbsUp, Clock, BadgeCheck, Sprout } from "lucide-react";
@@ -575,10 +575,7 @@ style={{ textShadow: "0 2px 20px rgba(0,0,0,0.95)" }}>
 <span className="block mt-2 text-[#F9A825] bg-black/35 px-2 py-1 rounded-lg inline-block">
 हर फसल के लिए तैयार
 </span>
-</h3> font-black text-2xl md:text-4xl lg:text-5xl text-white leading-tight"
-            style={{ textShadow: "0 2px 20px rgba(0,0,0,0.95)" }}>
-            धान • गेहूं • सोयाबीन<br />
-            <span style={{ color: "#F9A825" }}>हर फसल के लिए तैयार</span>
+</h3>
           </h3>
           <p className="text-white/90 font-hindi text-sm md:text-base font-medium leading-relaxed"
             style={{ textShadow: "0 1px 10px rgba(0,0,0,0.95)" }}>
