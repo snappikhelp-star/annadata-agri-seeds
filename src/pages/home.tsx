@@ -313,7 +313,7 @@ function HeroSection() {
           >
             {[
               { icon: <Users className="w-4 h-4" />, label: "200+ Farmers Trusted" },
-              { icon: <Heart className="w-4 h-4" />, label: "43K+ Instagram" },
+              { icon: <Heart className="w-4 h-4" />, label: "43.6K+ Instagram" },
               { icon: <FaFacebook className="w-4 h-4" />, label: "31K+ Facebook" },
             ].map((b, i) => (
               <div key={i} className="flex items-center gap-2 px-4 py-2 rounded-full glass-dark border border-secondary/30 text-white text-sm font-medium">
@@ -355,7 +355,7 @@ function ProductsSection() {
   const products = [
     {
       icon: <Leaf className="w-8 h-8" />, nameHi: "बीज", nameEn: "Seeds",
-      descHi: "धान, गेहूं, सोयाबीन, कपास सहित सभी प्रमुख खरीफ और रबी फसलों के प्रमाणित हाइब्रिड बीज — अधिक पैदावार, बेहतर गुणवत्ता।",
+      descHi: "धान, गेहूं, सोयाबीन, चना सहित सभी प्रमुख खरीफ और रबी फसलों के प्रमाणित हाइब्रिड बीज — अधिक पैदावार, बेहतर गुणवत्ता।",
       desc: "Certified hybrid seeds for rice, wheat, soybean & all major crops.",
       accent: "#4CAF50", bg: "from-[#1B5E20] to-[#2E7D32]"
     },
@@ -443,7 +443,7 @@ function WhyChooseSection() {
     { icon: <ShieldCheck className="w-7 h-7" />, title: "विशेषज्ञ सलाह", titleEn: "Expert Guidance", desc: "कौन सी दवाई, कितनी मात्रा — हर फसल के लिए सही सलाह बिल्कुल मुफ्त।", color: "#F9A825" },
     { icon: <ThumbsUp className="w-7 h-7" />, title: "किसान का भरोसा", titleEn: "Farmer's Trust", desc: "1 साल में 200+ किसान भाइयों ने हम पर भरोसा किया और परिणाम पाए।", color: "#00897B" },
     { icon: <Clock className="w-7 h-7" />, title: "समय पर उपलब्धता", titleEn: "Always Available", desc: "बुवाई के सीजन में भी स्टॉक हमेशा तैयार — कभी खाली हाथ न जाएं।", color: "#7E57C2" },
-    { icon: <Sprout className="w-7 h-7" />, title: "हाइब्रिड बीज", titleEn: "Hybrid Seeds", desc: "सोयाबीन, गेहूं, कपास सहित सभी प्रमुख फसलों के उच्च उत्पादन बीज।", color: "#EF6C00" },
+    { icon: <Sprout className="w-7 h-7" />, title: "हाइब्रिड बीज", titleEn: "Hybrid Seeds", desc: "सोयाबीन, गेहूं, चना सहित सभी प्रमुख फसलों के उच्च उत्पादन बीज।", color: "#EF6C00" },
     { icon: <Truck className="w-7 h-7" />, title: "आसान पहुंच", titleEn: "Easy Access", desc: "रायसेन रोड, त्रिमूर्ति चौराहा, सलामतपुर — सालों में सबसे सुविधाजनक स्थान।", color: "#0288D1" },
   ];
 
@@ -508,7 +508,7 @@ function WhyChooseSection() {
 function StatsSection() {
   const stats = [
     { val: "200+", label: "किसान ग्राहक", sub: "Happy Farmers" },
-    { val: "43K+", label: "इंस्टाग्राम", sub: "Followers" },
+    { val: "43.6K+", label: "इंस्टाग्राम", sub: "Followers" },
     { val: "31K+", label: "फेसबुक", sub: "Followers" },
     { val: "8K+", label: "यूट्यूब", sub: "Subscribers" },
     { val: "4.9★", label: "गूगल रेटिंग", sub: "Google Rating" },
@@ -699,7 +699,7 @@ function OwnerSection() {
             <div className="flex flex-wrap gap-5 justify-center md:justify-start mb-7">
               {[
                 { val: "1 Year", label: "In Business" },
-                { val: "43K+", label: "Instagram" },
+                { val: "43.6K+", label: "Instagram" },
                 { val: "31K+", label: "Facebook" },
                 { val: "8K+", label: "YouTube" },
                 { val: "200+", label: "Farmers" },
