@@ -1,4 +1,4 @@
-fimport { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Phone, MapPin, MessageCircle, Leaf, ShieldPlus, Droplets, ScanLine, Star, Award, CheckCircle, Users, Heart, ShieldCheck, Truck, ThumbsUp, Clock, BadgeCheck, Sprout } from "lucide-react";
@@ -569,14 +569,13 @@ function BannerDivider() {
             style={{ background: "rgba(249,168,37,0.25)", border: "1.5px solid rgba(249,168,37,0.6)" }}>
             🌾 मुख्य उत्पाद — धान की खेती
           </div>
-          <h3 className="font-hindi font-black text-xl md:text-4xl lg:text-5xl text-white leading-tight text-center md:text-right max-w-[90%] md:max-w-full mx-auto md:mx-0"
-style={{ textShadow: "0 2px 20px rgba(0,0,0,0.95)" }}>
-धान • गेहूं • सोयाबीन
-<span className="block mt-2 text-[#F9A825] bg-black/35 px-2 py-1 rounded-lg inline-block">
-हर फसल के लिए तैयार
-</span>
+<h3 className="font-hindi font-black text-xl md:text-4xl lg:text-5xl text-white leading-tight text-center md:text-right max-w-[90%] md:max-w-full mx-auto md:mx-0"
+  style={{ textShadow: "0 2px 20px rgba(0,0,0,0.95)" }}>
+  धान • गेहूं • सोयाबीन
+  <span className="block mt-2 text-[#F9A825] bg-black/35 px-2 py-1 rounded-lg inline-block">
+    हर फसल के लिए तैयार
+  </span>
 </h3>
-          </h3>
           <p className="text-white/90 font-hindi text-sm md:text-base font-medium leading-relaxed"
             style={{ textShadow: "0 1px 10px rgba(0,0,0,0.95)" }}>
             रायसेन जिले के किसानों का भरोसेमंद साथी<br />
