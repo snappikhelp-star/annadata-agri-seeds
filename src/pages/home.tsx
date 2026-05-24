@@ -178,7 +178,7 @@ function HeroSection() {
     },
     {
       badge: "🌱 खरीफ सीजन — सोयाबीन",
-      title: "सोयाबीन • कपास\nकीटनाशक दवाइयां",
+      title: "सोयाबीन • चना\nकीटनाशक दवाइयां",
       subtitle: "असली ब्रांड • सही दाम • विशेषज्ञ सलाह मुफ्त",
       color: "#26a69a",
       bg: "from-teal-950/85 via-teal-900/50 to-transparent",
