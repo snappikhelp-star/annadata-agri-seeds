@@ -111,14 +111,14 @@ function TickerStrip() {
   const items = [
     "🌱 खरीफ सीजन — हाइब्रिड सोयाबीन बीज उपलब्ध",
     "🧴 कीटनाशक पर विशेष छूट — अभी संपर्क करें",
-    "🌾 गेहूं • सोयाबीन • कपास के प्रीमियम बीज",
+    "🌾 गेहूं • सोयाबीन • चना के प्रीमियम बीज",
     "📞 Call करें: 6261737388 — केशव मीणा",
     "🛡️ 100% असली माल — कोई मिलावट नहीं",
     "⭐ Google Rating 4.9 — 200+ Happy Farmers",
     "💬 WhatsApp पर ऑर्डर करें — तुरंत जवाब",
     "🌿 फसल दवाइयां • खरपतवार नाशक • बीज",
     "📍 रायसेन रोड, त्रिमूर्ति चौराहा, सलामतपुर",
-    "🎯 43K+ Instagram • 31K+ Facebook • 8K+ YouTube",
+    "🎯 46K+ Instagram • 31K+ Facebook • 8.7K+ YouTube",
   ];
 
   // Duplicate for seamless loop
@@ -569,7 +569,13 @@ function BannerDivider() {
             style={{ background: "rgba(249,168,37,0.25)", border: "1.5px solid rgba(249,168,37,0.6)" }}>
             🌾 मुख्य उत्पाद — धान की खेती
           </div>
-          <h3 className="font-hindi font-black text-2xl md:text-4xl lg:text-5xl text-white leading-tight"
+          <h3 className="font-hindi font-black text-xl md:text-4xl lg:text-5xl text-white leading-tight text-center md:text-right max-w-[90%] md:max-w-full mx-auto md:mx-0"
+style={{ textShadow: "0 2px 20px rgba(0,0,0,0.95)" }}>
+धान • गेहूं • सोयाबीन
+<span className="block mt-2 text-[#F9A825] bg-black/35 px-2 py-1 rounded-lg inline-block">
+हर फसल के लिए तैयार
+</span>
+</h3> font-black text-2xl md:text-4xl lg:text-5xl text-white leading-tight"
             style={{ textShadow: "0 2px 20px rgba(0,0,0,0.95)" }}>
             धान • गेहूं • सोयाबीन<br />
             <span style={{ color: "#F9A825" }}>हर फसल के लिए तैयार</span>
@@ -579,7 +585,7 @@ function BannerDivider() {
             रायसेन जिले के किसानों का भरोसेमंद साथी<br />
             असली बीज • सही दवाई • मुफ्त सलाह
           </p>
-          <div className="flex flex-wrap gap-2 justify-center md:justify-end pointer-events-auto">
+          <div className="flex flex-wrap gap-2 justify-center md:justify-end pointer-events-auto mt-4">
             <a href="tel:6261737388"
               className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-bold text-white transition-all hover:scale-105"
               style={{ background: "#F9A825", boxShadow: "0 4px 16px rgba(249,168,37,0.5)" }}>
@@ -833,7 +839,7 @@ function Footer() {
               className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/10 hover:bg-secondary hover:text-foreground transition-all border border-white/10 text-sm font-medium text-white">
               <FaInstagram className="w-4 h-4" />@ANNADATA_AGRI
             </a>
-            <a href="https://www.instagram.com/lifeofkeshevmeena" target="_blank" rel="noreferrer" data-testid="footer-instagram-owner"
+            <a href="https://www.instagram.com/lifeofkeshavmeena?igsh=MXc0emJjanFrbzluOQ==" target="_blank" rel="noreferrer" data-testid="footer-instagram-owner"
               className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/10 hover:bg-secondary hover:text-foreground transition-all border border-white/10 text-sm font-medium text-white">
               <FaInstagram className="w-4 h-4 text-pink-400" />@lifeofkeshevmeena
             </a>
