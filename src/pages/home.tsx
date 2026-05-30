@@ -46,7 +46,7 @@ function FloatingWhatsApp() {
   }, []);
   return (
     <motion.a
-      href="https://wa.me/916261737388"
+      href="https://wa.me/919691712455"
       target="_blank"
       rel="noreferrer"
       data-testid="button-floating-whatsapp"
@@ -91,14 +91,14 @@ function Navbar() {
             <Link href="/reviews" data-testid="nav-reviews" className="glass px-3 py-2 rounded-full text-white font-medium text-sm flex items-center gap-1.5 hover:bg-white/20 transition-colors border border-secondary/30">
               <Star className="w-3.5 h-3.5 text-secondary fill-secondary" />Reviews
             </Link>
-            <a href="tel:6261737388" data-testid="nav-call" className="glass px-3 py-2 rounded-full text-white font-medium text-sm flex items-center gap-1.5 hover:bg-white/20 transition-colors">
-              <Phone className="w-3.5 h-3.5 text-secondary" />6261737388
+            <a href="tel:9691712455" data-testid="nav-call" className="glass px-3 py-2 rounded-full text-white font-medium text-sm flex items-center gap-1.5 hover:bg-white/20 transition-colors">
+              <Phone className="w-3.5 h-3.5 text-secondary" />9691712455
             </a>
-            <a href="https://wa.me/916261737388" target="_blank" rel="noreferrer" data-testid="nav-whatsapp" className="bg-[#25D366] text-white px-4 py-2 rounded-full font-bold text-sm flex items-center gap-1.5 hover:bg-[#1ebe5d] transition-colors shadow-lg">
+            <a href="https://wa.me/9691712455" target="_blank" rel="noreferrer" data-testid="nav-whatsapp" className="bg-[#25D366] text-white px-4 py-2 rounded-full font-bold text-sm flex items-center gap-1.5 hover:bg-[#1ebe5d] transition-colors shadow-lg">
               <FaWhatsapp className="w-3.5 h-3.5" />WhatsApp
             </a>
           </div>
-          <a href="https://wa.me/916261737388" target="_blank" rel="noreferrer" className="md:hidden bg-[#25D366] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg flex-shrink-0">
+          <a href="https://wa.me/9691712455" target="_blank" rel="noreferrer" className="md:hidden bg-[#25D366] text-white w-10 h-10 rounded-full flex items-center justify-center shadow-lg flex-shrink-0">
             <FaWhatsapp className="w-5 h-5" />
           </a>
         </div>
@@ -113,7 +113,7 @@ function TickerStrip() {
     "🌱 खरीफ सीजन — हाइब्रिड सोयाबीन बीज उपलब्ध",
     "🧴 कीटनाशक पर विशेष छूट — अभी संपर्क करें",
     "🌾 गेहूं • सोयाबीन • चना के प्रीमियम बीज",
-    "📞 Call करें: 6261737388 — केशव मीणा",
+    "📞 Call करें: 9691712455 — केशव मीणा",
     "🛡️ 100% असली माल — कोई मिलावट नहीं",
     "⭐ Google Rating 4.9 — 200+ Happy Farmers",
     "💬 WhatsApp पर ऑर्डर करें — तुरंत जवाब",
@@ -241,14 +241,14 @@ function HeroSection() {
               {/* CTA */}
               <div className="flex flex-col gap-3 items-center md:items-end flex-shrink-0">
                 <a
-                  href="tel:6261737388"
+                  href="tel:919691712455"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-base text-white transition-all hover:scale-105 shadow-lg"
                   style={{ background: slide.color, boxShadow: `0 6px 20px ${slide.color}55` }}
                 >
                   <Phone className="w-5 h-5" /> अभी कॉल करें
                 </a>
                 <a
-                  href="https://wa.me/916261737388"
+                  href="https://wa.me/919691712455"
                   target="_blank" rel="noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-bold text-base text-white transition-all hover:scale-105"
                   style={{ background: "#25D366", boxShadow: "0 6px 20px rgba(37,211,102,0.4)" }}
@@ -330,12 +330,12 @@ function HeroSection() {
             transition={{ duration: 0.7, delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-3 w-full max-w-lg"
           >
-            <a href="tel:6261737388" data-testid="button-call-now"
+            <a href="tel:9691712455" data-testid="button-call-now"
               className="flex-1 py-4 bg-secondary hover:bg-secondary/90 text-secondary-foreground font-bold rounded-2xl flex items-center justify-center gap-2 text-lg transition-all hover:-translate-y-1 shadow-xl"
               style={{ boxShadow: "0 8px 24px rgba(249,168,37,0.45)" }}>
               <Phone className="w-5 h-5" /> Call Now
             </a>
-            <a href="https://wa.me/916261737388" target="_blank" rel="noreferrer" data-testid="button-whatsapp-hero"
+            <a href="https://wa.me/919691712455" target="_blank" rel="noreferrer" data-testid="button-whatsapp-hero"
               className="flex-1 py-4 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold rounded-2xl flex items-center justify-center gap-2 text-lg transition-all hover:-translate-y-1 shadow-xl"
               style={{ boxShadow: "0 8px 24px rgba(37,211,102,0.45)" }}>
               <FaWhatsapp className="w-6 h-6" /> WhatsApp
@@ -583,12 +583,12 @@ function BannerDivider() {
             असली बीज • सही दवाई • मुफ्त सलाह
           </p>
           <div className="flex flex-wrap gap-2 justify-center md:justify-end pointer-events-auto mt-4">
-            <a href="tel:6261737388"
+            <a href="tel:9691712455"
               className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-bold text-white transition-all hover:scale-105"
               style={{ background: "#F9A825", boxShadow: "0 4px 16px rgba(249,168,37,0.5)" }}>
-              <Phone className="w-4 h-4" /> 6261737388
+              <Phone className="w-4 h-4" /> 9691712455
             </a>
-            <a href="https://wa.me/916261737388" target="_blank" rel="noreferrer"
+            <a href="https://wa.me/9691712455" target="_blank" rel="noreferrer"
               className="flex items-center gap-1.5 px-4 py-2 rounded-xl text-sm font-bold text-white transition-all hover:scale-105"
               style={{ background: "#25D366", boxShadow: "0 4px 16px rgba(37,211,102,0.5)" }}>
               <FaWhatsapp className="w-4 h-4" /> WhatsApp
@@ -753,7 +753,7 @@ function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
           <div className="flex flex-col gap-4">
-            <a href="tel:6261737388" data-testid="contact-call"
+            <a href="tel:9691712455" data-testid="contact-call"
               className="bg-card hover:bg-card/70 p-6 rounded-2xl border border-border flex items-center gap-5 transition-all hover:shadow-lg hover:-translate-y-1 group">
               <div className="w-14 h-14 bg-primary/10 rounded-xl flex items-center justify-center text-primary group-hover:scale-110 transition-transform flex-shrink-0">
                 <Phone className="w-6 h-6" />
@@ -761,7 +761,7 @@ function ContactSection() {
               <div>
                 <h4 className="text-lg font-bold text-foreground mb-0.5">Call Us</h4>
                 <p className="text-muted-foreground text-sm mb-1">Available morning to evening</p>
-                <span className="text-2xl font-black text-primary">6261737388</span>
+                <span className="text-2xl font-black text-primary">9691712455</span>
               </div>
             </a>
 
@@ -779,7 +779,7 @@ function ContactSection() {
             </a>
 
             <div className="grid grid-cols-2 gap-3">
-              <a href="https://wa.me/916261737388" target="_blank" rel="noreferrer" data-testid="contact-whatsapp"
+              <a href="https://wa.me/919691712455" target="_blank" rel="noreferrer" data-testid="contact-whatsapp"
                 className="bg-[#25D366] hover:bg-[#1ebe5d] text-white p-4 rounded-2xl flex items-center justify-center gap-2 font-bold text-base transition-colors shadow-lg">
                 <FaWhatsapp className="w-5 h-5" />WhatsApp
               </a>
@@ -914,7 +914,7 @@ function FarmerSupportSection() {
 धन्यवाद।
 `;
 
-    const url = `https://wa.me/916261737388?text=${encodeURIComponent(
+    const url = `https://wa.me/919691712455?text=${encodeURIComponent(
       whatsappMessage
     )}`;
 
@@ -1117,7 +1117,7 @@ function Footer() {
               className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/10 hover:bg-[#1877F2] transition-all border border-white/10 text-sm font-medium text-white">
               <FaFacebook className="w-4 h-4 text-[#1877F2]" />Facebook 31K+
             </a>
-            <a href="https://wa.me/916261737388" target="_blank" rel="noreferrer" data-testid="footer-whatsapp"
+            <a href="https://wa.me/919691712455" target="_blank" rel="noreferrer" data-testid="footer-whatsapp"
               className="flex items-center gap-2 px-4 py-2.5 rounded-full bg-white/10 hover:bg-[#25D366] transition-all border border-white/10 text-sm font-medium text-white">
               <FaWhatsapp className="w-4 h-4 text-[#25D366]" />WhatsApp
             </a>
