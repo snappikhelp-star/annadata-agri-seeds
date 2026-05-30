@@ -819,6 +819,14 @@ function ContactSection() {
   );
 }
 function FarmerSupportSection() {
+  const [form, setForm] = useState({
+    service: "धान के प्रोजेक्ट",
+    name: "",
+    mobile: "",
+    village: "",
+    message: "",
+  });
+
   const supportItems = [
     {
       title: "खाद, बीज और दवाई सलाह",
@@ -852,8 +860,72 @@ function FarmerSupportSection() {
     },
   ];
 
+  const serviceOptions = [
+    "धान के प्रोजेक्ट",
+    "धान PB1 वैरायटी",
+    "धान खरीदी जानकारी",
+    "खाद, बीज और दवाई सलाह",
+    "फसल समस्या समाधान",
+    "सोयाबीन बीज जानकारी",
+    "गेहूं बीज जानकारी",
+    "चना बीज जानकारी",
+    "खरपतवार नाशक जानकारी",
+    "कीटनाशक / फसल दवाई",
+    "Direct Keshav Bhai Connect",
+    "अन्य enquiry",
+  ];
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const selectService = (title) => {
+    setForm({ ...form, service: title });
+    setTimeout(() => {
+      document
+        .getElementById("farmer-enquiry-form")
+        ?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 100);
+  };
+
+  const sendToWhatsApp = () => {
+    if (!form.name.trim()) {
+      alert("कृपया अपना नाम भरें");
+      return;
+    }
+
+    if (!form.mobile.trim()) {
+      alert("कृपया मोबाइल नंबर भरें");
+      return;
+    }
+
+    const whatsappMessage = `
+नमस्ते Annadata Agri & Seeds,
+
+मुझे खेती से जुड़ी जानकारी चाहिए।
+
+सेवा / Enquiry: ${form.service}
+नाम: ${form.name}
+मोबाइल नंबर: ${form.mobile}
+गांव / स्थान: ${form.village || "नहीं भरा"}
+समस्या / Message: ${form.message || "नहीं भरा"}
+
+कृपया मुझे जानकारी दें।
+धन्यवाद।
+`;
+
+    const url = `https://wa.me/916261737388?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
+
+    window.open(url, "_blank");
+  };
+
   return (
-    <section id="farmer-support" className="py-16 md:py-24 bg-gradient-to-b from-[#0b2f18] via-[#123f22] to-[#071f10] text-white relative overflow-hidden">
+    <section
+      id="farmer-support"
+      className="py-16 md:py-24 bg-gradient-to-b from-[#0b2f18] via-[#123f22] to-[#071f10] text-white relative overflow-hidden"
+    >
       <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
         <img src={farmFieldPath} alt="" className="w-full h-full object-cover" />
       </div>
@@ -878,60 +950,143 @@ function FarmerSupportSection() {
           </h2>
 
           <p className="text-white/75 mt-5 max-w-3xl mx-auto font-hindi leading-relaxed">
-            अगर किसान भाईयों को खाद, बीज, दवाई, धान की वैरायटी, प्रोजेक्ट,
-            खरीदी या फसल से जुड़ी कोई भी enquiry हो, तो आप सीधे वेबसाइट के
-            माध्यम से Annadata Agri & Seeds से connect कर सकते हैं।
+            अपनी enquiry select करें, नाम और मोबाइल नंबर भरें, और details सीधे
+            WhatsApp पर Annadata team तक भेजें।
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-5 md:gap-6">
           {supportItems.map((item, index) => (
-            <motion.div
+            <motion.button
+              type="button"
               key={index}
+              onClick={() => selectService(item.title)}
               initial={{ opacity: 0, y: 35 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.08, duration: 0.55 }}
               whileHover={{ y: -8, scale: 1.02 }}
-              className="bg-white/10 border border-white/10 rounded-2xl p-6 backdrop-blur-sm hover:bg-white/15 transition-all relative overflow-hidden"
+              className="text-left bg-white/10 border border-white/10 rounded-2xl p-6 backdrop-blur-sm hover:bg-white/15 transition-all relative overflow-hidden"
             >
               <div className="absolute -top-8 -right-8 w-24 h-24 bg-secondary/20 rounded-full blur-2xl" />
               <div className="text-4xl mb-4 relative z-10">{item.icon}</div>
+
               <h3 className="text-xl font-bold font-hindi mb-2 relative z-10">
                 {item.title}
               </h3>
+
               <p className="text-white/70 text-sm leading-relaxed font-hindi relative z-10">
                 {item.desc}
               </p>
-            </motion.div>
+
+              <span className="inline-block mt-4 text-secondary font-bold text-sm font-hindi relative z-10">
+                Select करें →
+              </span>
+            </motion.button>
           ))}
         </div>
 
         <motion.div
+          id="farmer-enquiry-form"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="mt-12 bg-white text-[#0b2f18] rounded-3xl p-6 md:p-9 text-center shadow-2xl border-4 border-secondary/40"
+          className="mt-12 bg-white text-[#0b2f18] rounded-3xl p-6 md:p-9 shadow-2xl border-4 border-secondary/40"
         >
-          <h3 className="text-2xl md:text-3xl font-black font-hindi mb-3">
-            अपनी फसल की समस्या भेजें
-          </h3>
+          <div className="text-center mb-7">
+            <h3 className="text-2xl md:text-3xl font-black font-hindi mb-3">
+              अपनी enquiry भेजें
+            </h3>
 
-          <p className="mb-6 font-hindi text-[#0b2f18]/75 max-w-2xl mx-auto">
-            नीचे दिए बटन पर क्लिक करें और WhatsApp पर अपनी फसल, दवाई, बीज,
-            धान या खरीदी से जुड़ी enquiry भेजें।
-          </p>
+            <p className="font-hindi text-[#0b2f18]/75 max-w-2xl mx-auto">
+              Details भरते ही आपका message WhatsApp में ready हो जाएगा।
+            </p>
+          </div>
 
-          <a
-            href="https://wa.me/916261737388?text=Namaste%20Annadata%20Agri%20%26%20Seeds%2C%20mujhe%20kheti%20se%20judi%20jaankari%20chahiye.%20Meri%20enquiry%20hai%3A"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold px-8 py-4 rounded-full transition-all hover:scale-105 shadow-xl"
-          >
-            <FaWhatsapp className="w-5 h-5" />
-            WhatsApp पर Enquiry भेजें
-          </a>
+          <div className="grid md:grid-cols-2 gap-4">
+            <div>
+              <label className="block font-bold font-hindi mb-2">
+                Enquiry Type
+              </label>
+              <select
+                name="service"
+                value={form.service}
+                onChange={handleChange}
+                className="w-full border-2 border-green-800/20 rounded-xl px-4 py-3 outline-none focus:border-green-700 bg-white"
+              >
+                {serviceOptions.map((option, i) => (
+                  <option key={i} value={option}>
+                    {option}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            <div>
+              <label className="block font-bold font-hindi mb-2">
+                आपका नाम *
+              </label>
+              <input
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                placeholder="अपना नाम लिखें"
+                className="w-full border-2 border-green-800/20 rounded-xl px-4 py-3 outline-none focus:border-green-700"
+              />
+            </div>
+
+            <div>
+              <label className="block font-bold font-hindi mb-2">
+                मोबाइल नंबर *
+              </label>
+              <input
+                name="mobile"
+                value={form.mobile}
+                onChange={handleChange}
+                placeholder="मोबाइल नंबर लिखें"
+                className="w-full border-2 border-green-800/20 rounded-xl px-4 py-3 outline-none focus:border-green-700"
+              />
+            </div>
+
+            <div>
+              <label className="block font-bold font-hindi mb-2">
+                गांव / स्थान
+              </label>
+              <input
+                name="village"
+                value={form.village}
+                onChange={handleChange}
+                placeholder="गांव या स्थान लिखें"
+                className="w-full border-2 border-green-800/20 rounded-xl px-4 py-3 outline-none focus:border-green-700"
+              />
+            </div>
+
+            <div className="md:col-span-2">
+              <label className="block font-bold font-hindi mb-2">
+                आपकी समस्या / Message
+              </label>
+              <textarea
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                rows="4"
+                placeholder="जैसे: धान PB1 चाहिए, धान प्रोजेक्ट करवाना है, फसल में कीड़ा लग रहा है..."
+                className="w-full border-2 border-green-800/20 rounded-xl px-4 py-3 outline-none focus:border-green-700 resize-none"
+              />
+            </div>
+          </div>
+
+          <div className="text-center mt-7">
+            <button
+              type="button"
+              onClick={sendToWhatsApp}
+              className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebe5d] text-white font-bold px-8 py-4 rounded-full transition-all hover:scale-105 shadow-xl"
+            >
+              <FaWhatsapp className="w-5 h-5" />
+              WhatsApp पर Details भेजें
+            </button>
+          </div>
         </motion.div>
       </div>
     </section>
