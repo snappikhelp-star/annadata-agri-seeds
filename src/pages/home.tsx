@@ -817,7 +817,82 @@ function ContactSection() {
     </section>
   );
 }
+<section id="farmer-support" className="py-16 bg-green-950 text-white">
+  <div className="max-w-6xl mx-auto px-4">
+    <div className="text-center mb-10">
+      <p className="text-yellow-400 font-semibold tracking-wide">किसान सहायता केंद्र</p>
+      <h2 className="text-3xl md:text-5xl font-bold mt-2">
+        खेती से जुड़ी हर जानकारी अब वेबसाइट पर
+      </h2>
+      <p className="text-green-100 mt-4 max-w-3xl mx-auto">
+        अगर किसान भाईयों को खाद, बीज, दवाई, धान की वैरायटी, प्रोजेक्ट या खरीदी से जुड़ा कोई भी सवाल हो,
+        तो आप सीधे वेबसाइट के माध्यम से Annadata Agri & Seeds से जुड़ सकते हैं।
+      </p>
+    </div>
 
+    <div className="grid md:grid-cols-3 gap-6">
+      {[
+        {
+          title: "खाद, बीज और दवाई जानकारी",
+          desc: "फसल के अनुसार सही खाद, बीज और दवाई की जानकारी प्राप्त करें।",
+          icon: "🌾",
+        },
+        {
+          title: "धान PB1 वैरायटी",
+          desc: "धान की PB1 वैरायटी, उपलब्धता और उपयोग से जुड़ी जानकारी लें।",
+          icon: "🌱",
+        },
+        {
+          title: "धान के प्रोजेक्ट",
+          desc: "धान के प्रोजेक्ट करवाने और पूरी प्रक्रिया की जानकारी प्राप्त करें।",
+          icon: "🚜",
+        },
+        {
+          title: "धान खरीदी जानकारी",
+          desc: "धान की खरीदी, रेट और संपर्क से जुड़ी जानकारी के लिए enquiry करें।",
+          icon: "💰",
+        },
+        {
+          title: "फसल समस्या समाधान",
+          desc: "फसल में कीट, रोग, खरपतवार या ग्रोथ से जुड़ी समस्या पूछें।",
+          icon: "🧪",
+        },
+        {
+          title: "Direct Expert Connect",
+          desc: "Keshav Bhai aur Annadata team se direct connect karne ke liye enquiry bhejein.",
+          icon: "📞",
+        },
+      ].map((item, index) => (
+        <div
+          key={index}
+          className="bg-white/10 border border-white/10 rounded-2xl p-6 hover:bg-white/15 transition"
+        >
+          <div className="text-4xl mb-4">{item.icon}</div>
+          <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+          <p className="text-green-100 text-sm leading-relaxed">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <div className="mt-10 bg-white text-green-950 rounded-2xl p-6 md:p-8 text-center shadow-xl">
+      <h3 className="text-2xl font-bold mb-3">
+        अपनी समस्या या enquiry भेजें
+      </h3>
+      <p className="mb-6">
+        नीचे दिए बटन पर क्लिक करें और WhatsApp पर अपनी फसल, दवाई, बीज या धान से जुड़ी जानकारी भेजें।
+      </p>
+
+      <a
+        href="https://wa.me/916261737388?text=Namaste%20Annadata%20Agri%20%26%20Seeds%2C%20mujhe%20kheti%20se%20judi%20jaankari%20chahiye.%20Meri%20enquiry%20hai%3A"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block bg-green-700 hover:bg-green-800 text-white font-bold px-8 py-4 rounded-full transition"
+      >
+        WhatsApp पर Enquiry भेजें
+      </a>
+    </div>
+  </div>
+</section>
 /* ─── Footer ─── */
 function Footer() {
   return (
