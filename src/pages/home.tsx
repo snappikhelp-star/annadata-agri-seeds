@@ -819,73 +819,45 @@ function ContactSection() {
   );
 }
 function FarmerSupportSection() {
+  const problemSuggestions = [
+    "PB1 धान चाहिए",
+    "धान का प्रोजेक्ट कराना है",
+    "घर से धान उठवाना है",
+    "धान खरीदी की जानकारी चाहिए",
+    "धान का रेट जानना है",
+    "हाइब्रिड बीज चाहिए",
+    "सोयाबीन बीज चाहिए",
+    "गेहूं बीज चाहिए",
+    "चना बीज चाहिए",
+    "खाद की सलाह चाहिए",
+    "फसल में कीड़ा लग गया है",
+    "खरपतवार नाशक चाहिए",
+    "फसल पीली पड़ रही है",
+    "फसल की ग्रोथ रुक गई है",
+    "कौन सी दवाई डालें?",
+    "Keshav Bhai se direct baat karni hai",
+    "अन्य समस्या",
+  ];
+
   const [form, setForm] = useState({
     service: "धान के प्रोजेक्ट",
     name: "",
     mobile: "",
     village: "",
+    problem: "",
     message: "",
   });
-
-  const supportItems = [
-    {
-      title: "खाद, बीज और दवाई सलाह",
-      desc: "फसल के हिसाब से सही खाद, बीज और दवाई की जानकारी पाएं।",
-      icon: "🌾",
-    },
-    {
-      title: "धान PB1 वैरायटी",
-      desc: "PB1 धान की वैरायटी, उपलब्धता और उपयोग से जुड़ी जानकारी लें।",
-      icon: "🌱",
-    },
-    {
-      title: "धान के प्रोजेक्ट",
-      desc: "धान के प्रोजेक्ट करवाने और पूरी प्रक्रिया की enquiry करें।",
-      icon: "🚜",
-    },
-    {
-      title: "धान खरीदी जानकारी",
-      desc: "धान खरीदी, रेट और संपर्क से जुड़ी जानकारी के लिए connect करें।",
-      icon: "💰",
-    },
-    {
-      title: "फसल समस्या समाधान",
-      desc: "कीट, रोग, खरपतवार या ग्रोथ से जुड़ी समस्या पूछें।",
-      icon: "🧪",
-    },
-    {
-      title: "Direct Keshav Bhai Connect",
-      desc: "जरूरी enquiry website के through सीधे Annadata team तक भेजें।",
-      icon: "📞",
-    },
-  ];
-
-  const serviceOptions = [
-    "धान के प्रोजेक्ट",
-    "धान PB1 वैरायटी",
-    "धान खरीदी जानकारी",
-    "खाद, बीज और दवाई सलाह",
-    "फसल समस्या समाधान",
-    "सोयाबीन बीज जानकारी",
-    "गेहूं बीज जानकारी",
-    "चना बीज जानकारी",
-    "खरपतवार नाशक जानकारी",
-    "कीटनाशक / फसल दवाई",
-    "Direct Keshav Bhai Connect",
-    "अन्य enquiry",
-  ];
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const selectService = (title) => {
-    setForm({ ...form, service: title });
-    setTimeout(() => {
-      document
-        .getElementById("farmer-enquiry-form")
-        ?.scrollIntoView({ behavior: "smooth", block: "center" });
-    }, 100);
+  const selectProblem = (problem) => {
+    setForm({
+      ...form,
+      problem,
+      message: problem === "अन्य समस्या" ? "" : problem,
+    });
   };
 
   const sendToWhatsApp = () => {
@@ -899,26 +871,30 @@ function FarmerSupportSection() {
       return;
     }
 
+    if (!form.message.trim()) {
+      alert("कृपया अपनी समस्या select करें या खुद लिखें");
+      return;
+    }
+
     const whatsappMessage = `
 नमस्ते Annadata Agri & Seeds,
 
 मुझे खेती से जुड़ी जानकारी चाहिए।
 
-सेवा / Enquiry: ${form.service}
+Enquiry Type: ${form.service}
 नाम: ${form.name}
 मोबाइल नंबर: ${form.mobile}
 गांव / स्थान: ${form.village || "नहीं भरा"}
-समस्या / Message: ${form.message || "नहीं भरा"}
+समस्या: ${form.message}
 
 कृपया मुझे जानकारी दें।
 धन्यवाद।
 `;
 
-    const url = `https://wa.me/919691712455?text=${encodeURIComponent(
-      whatsappMessage
-    )}`;
-
-    window.open(url, "_blank");
+    window.open(
+      `https://wa.me/916261737388?text=${encodeURIComponent(whatsappMessage)}`,
+      "_blank"
+    );
   };
 
   return (
@@ -935,146 +911,107 @@ function FarmerSupportSection() {
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-12"
+          className="text-center mb-10"
         >
           <p className="text-secondary font-bold tracking-widest font-hindi mb-3">
             किसान सहायता केंद्र
           </p>
 
           <h2 className="text-3xl md:text-5xl font-black font-hindi leading-tight">
-            खेती से जुड़ा सवाल?
+            आपकी समस्या क्या है?
             <span className="block text-secondary mt-2">
-              अब समाधान वेबसाइट पर
+              Select करें और WhatsApp पर भेजें
             </span>
           </h2>
 
           <p className="text-white/75 mt-5 max-w-3xl mx-auto font-hindi leading-relaxed">
-            अपनी enquiry select करें, नाम और मोबाइल नंबर भरें, और details सीधे
-            WhatsApp पर Annadata team तक भेजें।
+            किसान भाई अपनी enquiry select करें। अगर आपकी समस्या list में नहीं है,
+            तो “अन्य समस्या” select करके खुद लिख सकते हैं।
           </p>
         </motion.div>
-
-        <div className="grid md:grid-cols-3 gap-5 md:gap-6">
-          {supportItems.map((item, index) => (
-            <motion.button
-              type="button"
-              key={index}
-              onClick={() => selectService(item.title)}
-              initial={{ opacity: 0, y: 35 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.08, duration: 0.55 }}
-              whileHover={{ y: -8, scale: 1.02 }}
-              className="text-left bg-white/10 border border-white/10 rounded-2xl p-6 backdrop-blur-sm hover:bg-white/15 transition-all relative overflow-hidden"
-            >
-              <div className="absolute -top-8 -right-8 w-24 h-24 bg-secondary/20 rounded-full blur-2xl" />
-              <div className="text-4xl mb-4 relative z-10">{item.icon}</div>
-
-              <h3 className="text-xl font-bold font-hindi mb-2 relative z-10">
-                {item.title}
-              </h3>
-
-              <p className="text-white/70 text-sm leading-relaxed font-hindi relative z-10">
-                {item.desc}
-              </p>
-
-              <span className="inline-block mt-4 text-secondary font-bold text-sm font-hindi relative z-10">
-                Select करें →
-              </span>
-            </motion.button>
-          ))}
-        </div>
 
         <motion.div
           id="farmer-enquiry-form"
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="mt-12 bg-white text-[#0b2f18] rounded-3xl p-6 md:p-9 shadow-2xl border-4 border-secondary/40"
+          className="bg-white text-[#0b2f18] rounded-3xl p-6 md:p-9 shadow-2xl border-4 border-secondary/40"
         >
-          <div className="text-center mb-7">
-            <h3 className="text-2xl md:text-3xl font-black font-hindi mb-3">
-              अपनी enquiry भेजें
-            </h3>
+          <h3 className="text-2xl md:text-3xl font-black font-hindi mb-5 text-center">
+            अपनी enquiry भेजें
+          </h3>
 
-            <p className="font-hindi text-[#0b2f18]/75 max-w-2xl mx-auto">
-              Details भरते ही आपका message WhatsApp में ready हो जाएगा।
-            </p>
+          <div className="mb-6">
+            <label className="block font-bold font-hindi mb-3">
+              आपकी समस्या चुनें
+            </label>
+
+            <div className="flex flex-wrap gap-2">
+              {problemSuggestions.map((problem, index) => (
+                <button
+                  key={index}
+                  type="button"
+                  onClick={() => selectProblem(problem)}
+                  className={`px-4 py-2 rounded-full border font-hindi text-sm transition-all ${
+                    form.problem === problem
+                      ? "bg-green-800 text-white border-green-800"
+                      : "bg-green-50 text-green-900 border-green-200 hover:bg-green-100"
+                  }`}
+                >
+                  {problem}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <label className="block font-bold font-hindi mb-2">
-                Enquiry Type
-              </label>
-              <select
-                name="service"
-                value={form.service}
-                onChange={handleChange}
-                className="w-full border-2 border-green-800/20 rounded-xl px-4 py-3 outline-none focus:border-green-700 bg-white"
-              >
-                {serviceOptions.map((option, i) => (
-                  <option key={i} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-            </div>
+            <input
+              name="name"
+              value={form.name}
+              onChange={handleChange}
+              placeholder="आपका नाम *"
+              className="w-full border-2 border-green-800/20 rounded-xl px-4 py-3 outline-none focus:border-green-700"
+            />
 
-            <div>
-              <label className="block font-bold font-hindi mb-2">
-                आपका नाम *
-              </label>
-              <input
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                placeholder="अपना नाम लिखें"
-                className="w-full border-2 border-green-800/20 rounded-xl px-4 py-3 outline-none focus:border-green-700"
-              />
-            </div>
+            <input
+              name="mobile"
+              value={form.mobile}
+              onChange={handleChange}
+              placeholder="मोबाइल नंबर *"
+              className="w-full border-2 border-green-800/20 rounded-xl px-4 py-3 outline-none focus:border-green-700"
+            />
 
-            <div>
-              <label className="block font-bold font-hindi mb-2">
-                मोबाइल नंबर *
-              </label>
-              <input
-                name="mobile"
-                value={form.mobile}
-                onChange={handleChange}
-                placeholder="मोबाइल नंबर लिखें"
-                className="w-full border-2 border-green-800/20 rounded-xl px-4 py-3 outline-none focus:border-green-700"
-              />
-            </div>
+            <input
+              name="village"
+              value={form.village}
+              onChange={handleChange}
+              placeholder="गांव / स्थान"
+              className="w-full border-2 border-green-800/20 rounded-xl px-4 py-3 outline-none focus:border-green-700"
+            />
 
-            <div>
-              <label className="block font-bold font-hindi mb-2">
-                गांव / स्थान
-              </label>
-              <input
-                name="village"
-                value={form.village}
-                onChange={handleChange}
-                placeholder="गांव या स्थान लिखें"
-                className="w-full border-2 border-green-800/20 rounded-xl px-4 py-3 outline-none focus:border-green-700"
-              />
-            </div>
+            <select
+              name="service"
+              value={form.service}
+              onChange={handleChange}
+              className="w-full border-2 border-green-800/20 rounded-xl px-4 py-3 outline-none focus:border-green-700 bg-white"
+            >
+              <option>धान के प्रोजेक्ट</option>
+              <option>धान PB1 वैरायटी</option>
+              <option>धान खरीदी जानकारी</option>
+              <option>खाद, बीज और दवाई सलाह</option>
+              <option>फसल समस्या समाधान</option>
+              <option>Direct Keshav Bhai Connect</option>
+              <option>अन्य enquiry</option>
+            </select>
 
-            <div className="md:col-span-2">
-              <label className="block font-bold font-hindi mb-2">
-                आपकी समस्या / Message
-              </label>
-              <textarea
-                name="message"
-                value={form.message}
-                onChange={handleChange}
-                rows="4"
-                placeholder="जैसे: धान PB1 चाहिए, धान प्रोजेक्ट करवाना है, फसल में कीड़ा लग रहा है..."
-                className="w-full border-2 border-green-800/20 rounded-xl px-4 py-3 outline-none focus:border-green-700 resize-none"
-              />
-            </div>
+            <textarea
+              name="message"
+              value={form.message}
+              onChange={handleChange}
+              rows="4"
+              placeholder="अगर आपकी समस्या list में नहीं है तो यहाँ खुद लिखें..."
+              className="md:col-span-2 w-full border-2 border-green-800/20 rounded-xl px-4 py-3 outline-none focus:border-green-700 resize-none"
+            />
           </div>
 
           <div className="text-center mt-7">
@@ -1092,7 +1029,6 @@ function FarmerSupportSection() {
     </section>
   );
 }
-/* ─── Footer ─── */
 function Footer() {
   return (
     <footer className="bg-foreground text-background pt-14 pb-8 border-t-[6px] border-secondary">
