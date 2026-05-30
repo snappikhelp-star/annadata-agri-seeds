@@ -313,7 +313,7 @@ function HeroSection() {
           >
             {[
               { icon: <Users className="w-4 h-4" />, label: "200+ Farmers Trusted" },
-              { icon: <Heart className="w-4 h-4" />, label: "43.6K+ Instagram" },
+              { icon: <Heart className="w-4 h-4" />, label: "44K+ Instagram" },
               { icon: <FaFacebook className="w-4 h-4" />, label: "31K+ Facebook" },
             ].map((b, i) => (
               <div key={i} className="flex items-center gap-2 px-4 py-2 rounded-full glass-dark border border-secondary/30 text-white text-sm font-medium">
@@ -508,7 +508,7 @@ function WhyChooseSection() {
 function StatsSection() {
   const stats = [
     { val: "200+", label: "किसान ग्राहक", sub: "Happy Farmers" },
-    { val: "43.6K+", label: "इंस्टाग्राम", sub: "Followers" },
+    { val: "44K+", label: "इंस्टाग्राम", sub: "Followers" },
     { val: "31K+", label: "फेसबुक", sub: "Followers" },
     { val: "8K+", label: "यूट्यूब", sub: "Subscribers" },
     { val: "4.9★", label: "गूगल रेटिंग", sub: "Google Rating" },
@@ -699,7 +699,7 @@ function OwnerSection() {
             <div className="flex flex-wrap gap-5 justify-center md:justify-start mb-7">
               {[
                 { val: "1 Year", label: "In Business" },
-                { val: "43.6K+", label: "Instagram" },
+                { val: "44K+", label: "Instagram" },
                 { val: "31K+", label: "Facebook" },
                 { val: "8K+", label: "YouTube" },
                 { val: "200+", label: "Farmers" },
