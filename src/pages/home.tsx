@@ -892,7 +892,7 @@ Enquiry Type: ${form.service}
 `;
 
     window.open(
-      `https://wa.me/916261737388?text=${encodeURIComponent(whatsappMessage)}`,
+      `https://wa.me/919691712455?text=${encodeURIComponent(whatsappMessage)}`,
       "_blank"
     );
   };
