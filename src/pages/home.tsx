@@ -444,7 +444,7 @@ function WhyChooseSection() {
     { icon: <ShieldCheck className="w-7 h-7" />, title: "विशेषज्ञ सलाह", titleEn: "Expert Guidance", desc: "कौन सी दवाई, कितनी मात्रा — हर फसल के लिए सही सलाह बिल्कुल मुफ्त।", color: "#F9A825" },
     { icon: <ThumbsUp className="w-7 h-7" />, title: "किसान का भरोसा", titleEn: "Farmer's Trust", desc: "1 साल में 200+ किसान भाइयों ने हम पर भरोसा किया और परिणाम पाए।", color: "#00897B" },
     { icon: <Clock className="w-7 h-7" />, title: "समय पर उपलब्धता", titleEn: "Always Available", desc: "बुवाई के सीजन में भी स्टॉक हमेशा तैयार — कभी खाली हाथ न जाएं।", color: "#7E57C2" },
-    { icon: <Sprout className="w-7 h-7" />, title: "हाइब्रिड बीज", titleEn: "Hybrid Seeds", desc: "सोयाबीन, गेहूं, चना सहित सभी प्रमुख फसलों के उच्च उत्पादन बीज।", color: "#EF6C00" },
+    { icon: <Sprout className="w-7 h-7" />, title: "हाइब्रिड बीज", titleEn: "Hybrid Seeds", desc: "धान, सोयाबीन, गेहूं, चना सहित सभी प्रमुख फसलों के उच्च उत्पादन बीज।", color: "#EF6C00" },
     { icon: <Truck className="w-7 h-7" />, title: "आसान पहुंच", titleEn: "Easy Access", desc: "रायसेन रोड, त्रिमूर्ति चौराहा, सलामतपुर — सालों में सबसे सुविधाजनक स्थान।", color: "#0288D1" },
   ];
 
