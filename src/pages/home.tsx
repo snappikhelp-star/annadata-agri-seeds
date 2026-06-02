@@ -83,7 +83,7 @@ function Navbar() {
           <div className="flex items-center gap-2 md:gap-3 flex-shrink-0">
             <img src={logoPath} alt="Logo" className="w-10 h-10 md:w-12 md:h-12 object-contain rounded-full border-2 border-secondary/60 shadow-lg bg-white" />
             <div className="flex flex-col">
-              <span className="font-serif font-bold text-sm md:text-lg text-secondary tracking-wide leading-tight drop-shadow-sm">ANNADATA AGRI</span>
+              <span className="font-serif font-bold text-sm md:text-lg text-secondary tracking-wide leading-tight drop-shadow-sm">ANNADATA AGRI AND SEEDS</span>
               <span className="font-hindi text-[10px] md:text-xs text-secondary font-semibold">Salamatpur, Raisen</span>
             </div>
           </div>
